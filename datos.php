@@ -1,0 +1,86 @@
+<div class="datos.php">
+<style type="text/css">
+	
+body{
+    
+    	background-image: url('mecanica.png');
+			 background-size: cover; /* Cubre toda la pantalla */
+  background-repeat: no-repeat; /* No se repite */
+  background-attachment: fixed; /* La imagen se queda fija al hacer scroll */
+  background-position: center;.
+
+}  
+nav a{
+    color: black;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}  
+
+</style>
+
+	<center>
+	<table border="1">
+		<tr>
+			<th>EMPLEADO</th>
+			<th>CEDULA</th>
+			<th>REPUESTOS</th>
+			<th>MODELO</th>
+			<th>MANO DE OBRA</th>
+			<th>PLACA</th>
+			<th>Borrar</th>
+		</tr>
+<?php 
+		$conexion = mysqli_connect("localhost", "root", "", "taller");
+		if ($conexion) {
+			
+			$sql = "SELECT * FROM trabajo";
+
+			$consulta = mysqli_query($conexion, $sql);
+
+			if ($consulta) {
+				while($fila = mysqli_fetch_array($consulta)){
+					echo "<tr>";
+						echo "<td>";
+							echo $fila[0];
+						echo "</td>";
+						echo "<td>";
+							echo $fila[1];
+						echo "</td>";
+						echo "<td>";
+							echo $fila[2];
+						echo "</td>";
+						echo "<td>";
+							echo $fila[3];
+						echo "</td>";
+						echo "<td>";
+							echo $fila[4];
+						echo "</td>";
+						echo "<td>";
+							echo $fila[5];
+						echo "</td>";
+						echo "<td>";
+						echo "<form action='eliminar.php' method='POST'><input type='text' name='id' value='$fila[0]' hidden='true'><input type='submit' value='Borrar'></form>";
+						echo "</td>";
+					echo "</tr>";
+			}
+			}else{
+				echo "Error al realizar consulta";
+			}
+						
+
+
+
+		}else{
+		 echo "Lo Sentimos hay un error con la conexion a la base de datos";
+		 }
+
+?>
+		
+	</table>
+	</center>
+</div>
+
+<nav>
+<button><a href="principal.php">pagina principal</a></button>
+</nav>

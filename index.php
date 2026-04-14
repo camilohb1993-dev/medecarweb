@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pagina web</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:black;
+}
+
+.linea1{
+    height:20px;
+    background:#5896E2;
+}
+
+.linea2{
+    height:20px;
+    background:#43FFB6;
+}
+
+</style>
+
+</head>
+
+<body class="text-white">
+
+<div class="container text-center vh-100 d-flex flex-column justify-content-center">
+
+    <h1 class="display-3 mb-5">BIENVENIDO A MEDECAR</h1>
+
+    <div class="row mb-5">
+        <div class="col">
+            <div class="linea1"></div>
+        </div>
+        <div class="col">
+            <div class="linea2"></div>
+        </div>
+    </div>
+
+    <h2 class="mb-5">INGRESA</h2>
+
+    <div>
+        <a href="usuycon.php" class="btn btn-primary btn-lg px-5 py-3">
+            <b>ENTRAR</b>
+        </a>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
