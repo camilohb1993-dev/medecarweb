@@ -6,30 +6,71 @@
 
 <title>Taller Mecánico Medecar</title>
 
-<!-- Bootstrap CSS -->
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- ICONOS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
 
 body{
-background-image: url('medecar55.png.png');
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
+background: #f5f5f5;
 }
 
+/* HERO CLARO */
 .hero{
-background: rgba(0,0,0,0.6);
-color:white;
+background: linear-gradient(to right, #ffffff, #e9ecef);
+color:#000;
 padding:120px 20px;
 text-align:center;
 }
 
+/* TEXTO MÁS FUERTE */
 .hero h1{
 font-size:3rem;
+font-weight:bold;
 }
 
+/* TARJETAS */
+.card{
+border:none;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform: translateY(-10px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ICONOS GRANDES */
+.icono{
+font-size:40px;
+margin-bottom:10px;
+color:#0d6efd;
+}
+
+/* BOTÓN FLOTANTE WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:30px;
+padding:15px;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:1000;
+transition:0.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* FOOTER */
 footer{
 background:#111;
 color:white;
@@ -39,16 +80,15 @@ margin-top:40px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
 <div class="container">
 
-<a class="navbar-brand" href="#">MEDECAR</a>
+<a class="navbar-brand fw-bold" href="#">🚗 MEDECAR</a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 <span class="navbar-toggler-icon"></span>
@@ -57,28 +97,20 @@ margin-top:40px;
 <div class="collapse navbar-collapse" id="menu">
 <ul class="navbar-nav ms-auto">
 
-
-
-
-
 <li class="nav-item">
-<a class="nav-link" href="datos.php">Datos</a>
+<a class="nav-link" href="#">Datos</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="eliminarpagina.php">Borrar datos</a>
+<a class="nav-link" href="#">Agregar</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="agregardato.php">Agregar datos</a>
+<a class="nav-link" href="#">Modificar</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="modificarregistro.php">Modificar datos</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link text-danger" href="index.php">Salir</a>
+<a class="nav-link text-danger" href="#">Salir</a>
 </li>
 
 </ul>
@@ -95,45 +127,41 @@ margin-top:40px;
 </section>
 
 <!-- SERVICIOS -->
-<section class="container mt-5" id="servicios">
+<section class="container mt-5">
 
-<h2 class="text-center mb-4">Nuestros Servicios</h2>
+<h2 class="text-center mb-4 fw-bold">Nuestros Servicios</h2>
 
 <div class="row g-4">
 
 <div class="col-md-3">
-<div class="card shadow">
-<div class="card-body text-center">
-<h5 class="card-title">Mecánica General</h5>
-<p class="card-text">Diagnóstico y reparación completa de vehículos.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="card shadow">
-<div class="card-body text-center">
-<h5 class="card-title">Cambio de Aceite</h5>
-<p class="card-text">Mantenimiento rápido para prolongar la vida del motor.</p>
-</div>
+<div class="card shadow text-center p-3">
+<i class="bi bi-tools icono"></i>
+<h5>Mecánica General</h5>
+<p>Diagnóstico y reparación completa de vehículos.</p>
 </div>
 </div>
 
 <div class="col-md-3">
-<div class="card shadow">
-<div class="card-body text-center">
-<h5 class="card-title">Revisión de Frenos</h5>
-<p class="card-text">Seguridad garantizada con revisión profesional.</p>
-</div>
+<div class="card shadow text-center p-3">
+<i class="bi bi-droplet-half icono"></i>
+<h5>Cambio de Aceite</h5>
+<p>Mantenimiento rápido para el motor.</p>
 </div>
 </div>
 
 <div class="col-md-3">
-<div class="card shadow">
-<div class="card-body text-center">
-<h5 class="card-title">Diagnóstico Computarizado</h5>
-<p class="card-text">Detección de fallas con tecnología avanzada.</p>
+<div class="card shadow text-center p-3">
+<i class="bi bi-exclamation-triangle icono"></i>
+<h5>Frenos</h5>
+<p>Revisión completa para tu seguridad.</p>
 </div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow text-center p-3">
+<i class="bi bi-cpu icono"></i>
+<h5>Diagnóstico</h5>
+<p>Tecnología avanzada para detectar fallas.</p>
 </div>
 </div>
 
@@ -141,22 +169,21 @@ margin-top:40px;
 </section>
 
 <!-- NOSOTROS -->
-<section class="container mt-5" id="nosotros">
+<section class="container mt-5">
 
-<h2 class="text-center mb-3">Sobre Nosotros</h2>
+<h2 class="text-center fw-bold">Sobre Nosotros</h2>
 
 <p class="text-center">
 En <strong>Medecar</strong> contamos con técnicos especializados y años de experiencia
-en mantenimiento y reparación automotriz. Nuestro objetivo es ofrecer un servicio
-rápido, confiable y de alta calidad para todos nuestros clientes.
+en mantenimiento automotriz.
 </p>
 
 </section>
 
 <!-- CONTACTO -->
-<section class="container mt-5 mb-5" id="contacto">
+<section class="container mt-5 mb-5">
 
-<h2 class="text-center mb-3">Contacto</h2>
+<h2 class="text-center fw-bold">Contacto</h2>
 
 <p class="text-center">📍 Medellín, Colombia</p>
 <p class="text-center">📞 +57 000 000 0000</p>
@@ -164,11 +191,15 @@ rápido, confiable y de alta calidad para todos nuestros clientes.
 
 </section>
 
+<!-- BOTÓN WHATSAPP -->
+<a href="https://wa.me/573000000000" class="whatsapp">
+<i class="bi bi-whatsapp"></i>
+</a>
+
 <footer>
-<p>© 2026 Taller Mecánico Medecar - Todos los derechos reservados</p>
+<p>© 2026 Taller Mecánico Medecar</p>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
