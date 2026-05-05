@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -7,24 +6,42 @@
 
 <title>MEDECAR BIENVENIDOS</title>
 
-<!-- Bootstrap CSS -->
-
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
 
 body{
     background:black;
+    overflow:hidden;
 }
 
+/* LINEAS */
 .linea1{
     height:20px;
     background:#5896E2;
+    animation: crecer 2s ease-in-out;
 }
 
 .linea2{
     height:20px;
     background:#43FFB6;
+    animation: crecer 2s ease-in-out;
+}
+
+/* ANIMACION TEXTO */
+.titulo{
+    animation: aparecer 2s ease-in-out;
+}
+
+@keyframes aparecer{
+    from{opacity:0; transform: translateY(-20px);}
+    to{opacity:1; transform: translateY(0);}
+}
+
+@keyframes crecer{
+    from{width:0;}
+    to{width:100%;}
 }
 
 </style>
@@ -35,30 +52,27 @@ body{
 
 <div class="container text-center vh-100 d-flex flex-column justify-content-center">
 
-```
-<h1 class="display-3 mb-5">BIENVENIDOS</h1>
+    <h1 class="display-3 mb-5 titulo">BIENVENIDOS 🚗</h1>
 
-<div class="row mb-5">
-    <div class="col">
-        <div class="linea1"></div>
+    <div class="row mb-5">
+        <div class="col">
+            <div class="linea1"></div>
+        </div>
+        <div class="col">
+            <div class="linea2"></div>
+        </div>
     </div>
-    <div class="col">
-        <div class="linea2"></div>
-    </div>
-</div>
 
-<h2 class="mb-5">INGRESA</h2>
-
-<div>
-    <a href="principal.html" class="btn btn-primary btn-lg px-5 py-3">
-        <b>ENTRAR</b>
-    </a>
-</div>
-```
+    <h2 class="mb-5">Cargando sistema...</h2>
 
 </div>
 
-<!-- Bootstrap JS -->
+<!-- REDIRECCIÓN AUTOMÁTICA -->
+<script>
+    setTimeout(function(){
+        window.location.href = "principal.html";
+    }, 3000); // 3000 ms = 3 segundos
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
