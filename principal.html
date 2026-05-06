@@ -14,69 +14,75 @@
 
 <style>
 
+/* FONDO CON IMAGEN */
 body{
-background: #f5f5f5;
+    background-image: url('MEDECAR55.PNG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* HERO CLARO */
+/* CAPA OSCURA PARA MEJOR VISIBILIDAD */
+.overlay{
+    background: rgba(0,0,0,0.6);
+    min-height: 100vh;
+}
+
+/* HERO */
 .hero{
-background: linear-gradient(to right, #ffffff, #e9ecef);
-color:#000;
-padding:120px 20px;
-text-align:center;
-}
-
-/* TEXTO MÁS FUERTE */
-.hero h1{
-font-size:3rem;
-font-weight:bold;
+    background: rgba(255,255,255,0.9);
+    color:#000;
+    padding:100px 20px;
+    text-align:center;
+    border-radius:20px;
 }
 
 /* TARJETAS */
 .card{
-border:none;
-border-radius:15px;
-transition:0.3s;
+    border:none;
+    border-radius:15px;
+    transition:0.3s;
 }
 
 .card:hover{
-transform: translateY(-10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* ICONOS GRANDES */
+/* ICONOS */
 .icono{
-font-size:40px;
-margin-bottom:10px;
-color:#0d6efd;
+    font-size:40px;
+    margin-bottom:10px;
+    color:#0d6efd;
 }
 
-/* BOTÓN FLOTANTE WHATSAPP */
+/* BOTÓN WHATSAPP */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:30px;
-padding:15px;
-border-radius:50%;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-z-index:1000;
-transition:0.3s;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    font-size:30px;
+    padding:15px;
+    border-radius:50%;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    z-index:1000;
+    transition:0.3s;
 }
 
 .whatsapp:hover{
-transform:scale(1.1);
+    transform:scale(1.1);
 }
 
 /* FOOTER */
 footer{
-background:#111;
-color:white;
-padding:20px;
-text-align:center;
-margin-top:40px;
+    background:#111;
+    color:white;
+    padding:20px;
+    text-align:center;
+    margin-top:40px;
 }
 
 </style>
@@ -84,8 +90,10 @@ margin-top:40px;
 
 <body>
 
+<div class="overlay">
+
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <div class="container">
 
 <a class="navbar-brand fw-bold" href="#">🚗 MEDECAR</a>
@@ -101,8 +109,6 @@ margin-top:40px;
 <a class="nav-link" href="agendarcita.html">AGENDAR CITA</a>
 </li>
 
-
-
 <li class="nav-item">
 <a class="nav-link text-danger" href="#">Salir</a>
 </li>
@@ -113,8 +119,8 @@ margin-top:40px;
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-<div class="container">
+<section class="container mt-5">
+<div class="hero">
 <h1>Tu vehículo en manos de expertos 🚗🔧</h1>
 <p class="lead">Confianza, experiencia y calidad para tu vehículo</p>
 </div>
@@ -123,12 +129,12 @@ margin-top:40px;
 <!-- SERVICIOS -->
 <section class="container mt-5">
 
-<h2 class="text-center mb-4 fw-bold">Nuestros Servicios</h2>
+<h2 class="text-center text-white mb-4 fw-bold">Nuestros Servicios</h2>
 
 <div class="row g-4">
 
 <div class="col-md-3">
-<div class="card shadow text-center p-3">
+<div class="card text-center p-3">
 <i class="bi bi-tools icono"></i>
 <h5>Mecánica General</h5>
 <p>Diagnóstico y reparación completa de vehículos.</p>
@@ -136,7 +142,7 @@ margin-top:40px;
 </div>
 
 <div class="col-md-3">
-<div class="card shadow text-center p-3">
+<div class="card text-center p-3">
 <i class="bi bi-droplet-half icono"></i>
 <h5>Cambio de Aceite</h5>
 <p>Mantenimiento rápido para el motor.</p>
@@ -144,7 +150,7 @@ margin-top:40px;
 </div>
 
 <div class="col-md-3">
-<div class="card shadow text-center p-3">
+<div class="card text-center p-3">
 <i class="bi bi-exclamation-triangle icono"></i>
 <h5>Frenos</h5>
 <p>Revisión completa para tu seguridad.</p>
@@ -152,7 +158,7 @@ margin-top:40px;
 </div>
 
 <div class="col-md-3">
-<div class="card shadow text-center p-3">
+<div class="card text-center p-3">
 <i class="bi bi-cpu icono"></i>
 <h5>Diagnóstico</h5>
 <p>Tecnología avanzada para detectar fallas.</p>
@@ -163,7 +169,7 @@ margin-top:40px;
 </section>
 
 <!-- NOSOTROS -->
-<section class="container mt-5">
+<section class="container mt-5 text-white">
 
 <h2 class="text-center fw-bold">Sobre Nosotros</h2>
 
@@ -175,7 +181,7 @@ en mantenimiento automotriz.
 </section>
 
 <!-- CONTACTO -->
-<section class="container mt-5 mb-5">
+<section class="container mt-5 mb-5 text-white">
 
 <h2 class="text-center fw-bold">Contacto</h2>
 
@@ -185,7 +191,7 @@ en mantenimiento automotriz.
 
 </section>
 
-<!-- BOTÓN WHATSAPP -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/573246299806" class="whatsapp">
 <i class="bi bi-whatsapp"></i>
 </a>
@@ -193,6 +199,8 @@ en mantenimiento automotriz.
 <footer>
 <p>© 2026 Taller Mecánico Medecar</p>
 </footer>
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
