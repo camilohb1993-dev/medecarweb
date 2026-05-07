@@ -1,80 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MEDECAR | Taller Mecánico</title>
 
-<title>MEDECAR BIENVENIDOS</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-body{
-    background:black;
-    overflow:hidden;
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
 
-/* LINEAS */
-.linea1{
-    height:20px;
-    background:#5896E2;
-    animation: crecer 2s ease-in-out;
-}
+    body{
+      overflow:hidden;
+      background:#000;
+      color:white;
+    }
 
-.linea2{
-    height:20px;
-    background:#43FFB6;
-    animation: crecer 2s ease-in-out;
-}
+    /* VIDEO/FONDO */
+    .hero{
+      width:100%;
+      height:100vh;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    }
 
-/* ANIMACION TEXTO */
-.titulo{
-    animation: aparecer 2s ease-in-out;
-}
+    .overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,.5));
+      z-index:1;
+    }
 
-@keyframes aparecer{
-    from{opacity:0; transform: translateY(-20px);}
-    to{opacity:1; transform: translateY(0);}
-}
+    /* EFECTOS */
+    .glow{
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#ff0000;
+      filter:blur(150px);
+      opacity:.3;
+      border-radius:50%;
+      animation:moveGlow 8s infinite alternate;
+      z-index:0;
+    }
 
-@keyframes crecer{
-    from{width:0;}
-    to{width:100%;}
-}
+    @keyframes moveGlow{
+      from{
+        transform:translate(-200px,-100px);
+      }
+      to{
+        transform:translate(200px,100px);
+      }
+    }
 
-</style>
+    .content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      padding:20px;
+      animation:fadeUp 2s ease;
+    }
 
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(50px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .logo{
+      font-size:5rem;
+      font-weight:700;
+      color:#fff;
+      letter-spacing:4px;
+    }
+
+    .logo span{
+      color:#ff2b2b;
+    }
+
+    .subtitle{
+      font-size:1.3rem;
+      color:#ddd;
+      margin-top:15px;
+      margin-bottom:35px;
+    }
+
+    .btn-main{
+      padding:15px 40px;
+      border:none;
+      border-radius:50px;
+      background:#ff2b2b;
+      color:white;
+      font-size:1.1rem;
+      font-weight:600;
+      transition:.4s;
+      text-decoration:none;
+      box-shadow:0 0 25px rgba(255,0,0,.5);
+    }
+
+    .btn-main:hover{
+      transform:scale(1.08);
+      background:#ff0000;
+      box-shadow:0 0 40px rgba(255,0,0,.8);
+    }
+
+    /* CONTADOR */
+    .timer{
+      margin-top:40px;
+      font-size:1rem;
+      color:#bbb;
+      letter-spacing:1px;
+    }
+
+    /* AUTOS */
+    .cars{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      display:flex;
+      justify-content:space-around;
+      z-index:1;
+      opacity:.15;
+    }
+
+    .cars i{
+      font-size:5rem;
+      animation:carsMove 5s infinite alternate;
+    }
+
+    @keyframes carsMove{
+      from{
+        transform:translateX(-20px);
+      }
+      to{
+        transform:translateX(20px);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      .logo{
+        font-size:3rem;
+      }
+
+      .subtitle{
+        font-size:1rem;
+      }
+
+      .btn-main{
+        padding:12px 30px;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="text-white">
+  <section class="hero">
 
-<div class="container text-center vh-100 d-flex flex-column justify-content-center">
+    <div class="overlay"></div>
 
-    <h1 class="display-3 mb-5 titulo">BIENVENIDOS 🚗</h1>
+    <div class="glow"></div>
 
-    <div class="row mb-5">
-        <div class="col">
-            <div class="linea1"></div>
-        </div>
-        <div class="col">
-            <div class="linea2"></div>
-        </div>
+    <!-- AUTOS -->
+    <div class="cars">
+      <i class="fa-solid fa-car-side"></i>
+      <i class="fa-solid fa-truck"></i>
+      <i class="fa-solid fa-car"></i>
     </div>
 
-    <h2 class="mb-5">Cargando sistema...</h2>
+    <!-- CONTENIDO -->
+    <div class="content">
 
-</div>
+      <h1 class="logo">MEDE<span>CAR</span></h1>
 
-<!-- REDIRECCIÓN AUTOMÁTICA -->
-<script>
-    setTimeout(function(){
+      <p class="subtitle">
+        Tecnología, potencia y confianza para tu vehículo.
+        El taller mecánico del futuro.
+      </p>
+
+      <a href="principal.html" class="btn-main">
+        <i class="fa-solid fa-arrow-right"></i>
+        Entrar Ahora
+      </a>
+
+      <div class="timer">
+        Redirigiendo automáticamente en
+        <span id="count">10</span> segundos...
+      </div>
+
+    </div>
+
+  </section>
+
+  <script>
+    // CONTADOR
+    let tiempo = 10;
+    const count = document.getElementById("count");
+
+    const intervalo = setInterval(() => {
+      tiempo--;
+      count.textContent = tiempo;
+
+      if(tiempo <= 0){
+        clearInterval(intervalo);
+
+        // REDIRECCION
         window.location.href = "principal.html";
-    }, 3000); // 3000 ms = 3 segundos
-</script>
+      }
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    }, 1000);
+  </script>
 
 </body>
 </html>
