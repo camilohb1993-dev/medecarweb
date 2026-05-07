@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Taller Mecánico Medecar</title>
+<title>MEDECAR | Taller Mecánico Premium</title>
 
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,64 +12,261 @@
 <!-- ICONOS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
-/* FONDO CON IMAGEN */
-body{
-    background-image: url('medecar55.png.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
 }
 
-/* CAPA OSCURA PARA MEJOR VISIBILIDAD */
-.overlay{
-    background: rgba(0,0,0,0.6);
-    min-height: 100vh;
+body{
+    background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)),
+    url('medecar55.png.png');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:rgba(0,0,0,0.75) !important;
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.navbar-brand{
+    font-size:2rem;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:15px;
+    transition:0.3s;
+    font-weight:500;
+}
+
+.nav-link:hover{
+    color:#ff2b2b !important;
 }
 
 /* HERO */
+
 .hero{
-    background: rgba(255,255,255,0.9);
-    color:#000;
-    padding:100px 20px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    border-radius:20px;
+    position:relative;
 }
 
-/* TARJETAS */
-.card{
+.hero-content{
+    max-width:900px;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero h1{
+    font-size:5rem;
+    font-weight:700;
+    line-height:1.1;
+}
+
+.hero h1 span{
+    color:#ff2b2b;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:1.3rem;
+    margin-top:20px;
+}
+
+.hero-buttons{
+    margin-top:40px;
+}
+
+.btn-main{
+    background:#ff2b2b;
+    color:white;
     border:none;
-    border-radius:15px;
-    transition:0.3s;
+    padding:15px 40px;
+    border-radius:50px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.4s;
+    margin:10px;
+    display:inline-block;
+    box-shadow:0 0 25px rgba(255,0,0,0.4);
 }
 
-.card:hover{
-    transform: translateY(-10px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+.btn-main:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:#ff0000;
+    box-shadow:0 0 40px rgba(255,0,0,0.7);
 }
 
-/* ICONOS */
-.icono{
-    font-size:40px;
-    margin-bottom:10px;
-    color:#0d6efd;
+.btn-outline-custom{
+    border:2px solid white;
+    color:white;
+    padding:15px 40px;
+    border-radius:50px;
+    text-decoration:none;
+    transition:0.4s;
+    font-weight:600;
 }
 
-/* BOTÓN WHATSAPP */
+.btn-outline-custom:hover{
+    background:white;
+    color:black;
+}
+
+/* EFECTOS */
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:red;
+    filter:blur(180px);
+    opacity:0.2;
+    z-index:-1;
+    animation:moveGlow 8s infinite alternate;
+}
+
+@keyframes moveGlow{
+    from{
+        transform:translate(-150px,-100px);
+    }
+
+    to{
+        transform:translate(200px,100px);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* SERVICIOS */
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    font-weight:700;
+}
+
+.section-title p{
+    color:#bbb;
+}
+
+.service-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:25px;
+    padding:40px 25px;
+    text-align:center;
+    transition:0.4s;
+    backdrop-filter:blur(8px);
+    height:100%;
+}
+
+.service-card:hover{
+    transform:translateY(-15px);
+    border-color:#ff2b2b;
+    box-shadow:0 0 30px rgba(255,0,0,0.25);
+}
+
+.service-icon{
+    font-size:60px;
+    color:#ff2b2b;
+    margin-bottom:20px;
+}
+
+/* NOSOTROS */
+
+.about{
+    padding:120px 0;
+}
+
+.about-box{
+    background:rgba(255,255,255,0.05);
+    border-radius:30px;
+    padding:50px;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.about-box h2{
+    font-size:3rem;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.about-box p{
+    color:#ccc;
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+/* CONTACTO */
+
+.contact-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.contact-card i{
+    color:#ff2b2b;
+    font-size:28px;
+}
+
+/* WHATSAPP */
+
 .whatsapp{
     position:fixed;
-    bottom:20px;
-    right:20px;
+    bottom:25px;
+    right:25px;
+    width:70px;
+    height:70px;
     background:#25D366;
-    color:white;
-    font-size:30px;
-    padding:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     border-radius:50%;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    z-index:1000;
-    transition:0.3s;
+    color:white;
+    font-size:35px;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 0 25px rgba(37,211,102,0.6);
+    transition:0.4s;
 }
 
 .whatsapp:hover{
@@ -77,12 +274,40 @@ body{
 }
 
 /* FOOTER */
+
 footer{
-    background:#111;
-    color:white;
-    padding:20px;
+    background:#050505;
+    padding:30px;
     text-align:center;
-    margin-top:40px;
+    margin-top:100px;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer p{
+    color:#999;
+    margin:0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section-title h2{
+        font-size:2.2rem;
+    }
+
+    .about-box h2{
+        font-size:2rem;
+    }
+
 }
 
 </style>
@@ -90,23 +315,33 @@ footer{
 
 <body>
 
-<div class="overlay">
-
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 <div class="container">
 
-<a class="navbar-brand fw-bold" href="#">🚗 MEDECAR</a>
+<a class="navbar-brand" href="#">
+🚗 MEDE<span style="color:#ff2b2b;">CAR</span>
+</a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 <span class="navbar-toggler-icon"></span>
 </button>
 
 <div class="collapse navbar-collapse" id="menu">
+
 <ul class="navbar-nav ms-auto">
 
 <li class="nav-item">
-<a class="nav-link" href="agendarcita.html">AGENDAR CITA</a>
+<a class="nav-link" href="#servicios">Servicios</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#nosotros">Nosotros</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contacto">Contacto</a>
 </li>
 
 <li class="nav-item">
@@ -114,93 +349,201 @@ footer{
 </li>
 
 </ul>
+
 </div>
 </div>
 </nav>
 
 <!-- HERO -->
-<section class="container mt-5">
-<div class="hero">
-<h1>Tu vehículo en manos de expertos 🚗🔧</h1>
-<p class="lead">Confianza, experiencia y calidad para tu vehículo</p>
+
+<section class="hero">
+
+<div class="glow"></div>
+
+<div class="container">
+
+<div class="hero-content">
+
+<h1>
+El futuro del <span>mantenimiento automotriz</span>
+</h1>
+
+<p>
+Tecnología, precisión y confianza para que tu vehículo
+siempre esté al máximo nivel.
+</p>
+
+<div class="hero-buttons">
+
+<a href="agendarcita.html" class="btn-main">
+<i class="bi bi-calendar-check"></i>
+AGENDAR CITA
+</a>
+
+<a href="#servicios" class="btn-outline-custom">
+Ver Servicios
+</a>
+
 </div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- SERVICIOS -->
-<section class="container mt-5">
 
-<h2 class="text-center text-white mb-4 fw-bold">Nuestros Servicios</h2>
+<section id="servicios" class="container py-5">
+
+<div class="section-title">
+
+<h2>Nuestros Servicios</h2>
+
+<p>
+Soluciones automotrices profesionales para todo tipo de vehículos.
+</p>
+
+</div>
 
 <div class="row g-4">
 
 <div class="col-md-3">
-<div class="card text-center p-3">
-<i class="bi bi-tools icono"></i>
-<h5>Mecánica General</h5>
-<p>Diagnóstico y reparación completa de vehículos.</p>
+
+<div class="service-card">
+
+<i class="bi bi-tools service-icon"></i>
+
+<h4>Mecánica General</h4>
+
+<p>
+Diagnóstico y reparación completa de vehículos.
+</p>
+
 </div>
+
 </div>
 
 <div class="col-md-3">
-<div class="card text-center p-3">
-<i class="bi bi-droplet-half icono"></i>
-<h5>Cambio de Aceite</h5>
-<p>Mantenimiento rápido para el motor.</p>
+
+<div class="service-card">
+
+<i class="bi bi-droplet-half service-icon"></i>
+
+<h4>Cambio de Aceite</h4>
+
+<p>
+Mantenimiento rápido y eficiente para el motor.
+</p>
+
 </div>
+
 </div>
 
 <div class="col-md-3">
-<div class="card text-center p-3">
-<i class="bi bi-exclamation-triangle icono"></i>
-<h5>Frenos</h5>
-<p>Revisión completa para tu seguridad.</p>
+
+<div class="service-card">
+
+<i class="bi bi-exclamation-triangle service-icon"></i>
+
+<h4>Frenos</h4>
+
+<p>
+Revisión y mantenimiento para mayor seguridad.
+</p>
+
 </div>
+
 </div>
 
 <div class="col-md-3">
-<div class="card text-center p-3">
-<i class="bi bi-cpu icono"></i>
-<h5>Diagnóstico</h5>
-<p>Tecnología avanzada para detectar fallas.</p>
-</div>
+
+<div class="service-card">
+
+<i class="bi bi-cpu service-icon"></i>
+
+<h4>Diagnóstico Digital</h4>
+
+<p>
+Tecnología avanzada para detectar cualquier falla.
+</p>
+
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 <!-- NOSOTROS -->
-<section class="container mt-5 text-white">
 
-<h2 class="text-center fw-bold">Sobre Nosotros</h2>
+<section id="nosotros" class="about">
 
-<p class="text-center">
-En <strong>Medecar</strong> contamos con técnicos especializados y años de experiencia
+<div class="container">
+
+<div class="about-box text-center">
+
+<h2>Sobre Nosotros</h2>
+
+<p>
+En <strong>MEDECAR</strong> contamos con técnicos especializados,
+herramientas de última generación y años de experiencia
 en mantenimiento automotriz.
+<br><br>
+Nuestro objetivo es ofrecer confianza, calidad y seguridad
+para cada vehículo que llega a nuestro taller.
 </p>
+
+</div>
+
+</div>
 
 </section>
 
 <!-- CONTACTO -->
-<section class="container mt-5 mb-5 text-white">
 
-<h2 class="text-center fw-bold">Contacto</h2>
+<section id="contacto" class="container py-5">
 
-<p class="text-center">📍 Medellín, Colombia</p>
-<p class="text-center">📞 +57 301 731 2645</p>
-<p class="text-center">📧 contacto@medecar.com</p>
+<div class="section-title">
+
+<h2>Contacto</h2>
+
+<p>
+Estamos listos para ayudarte.
+</p>
+
+</div>
+
+<div class="contact-card">
+
+<p><i class="bi bi-geo-alt-fill"></i> Medellín, Colombia</p>
+
+<p><i class="bi bi-telephone-fill"></i> +57 301 731 2645</p>
+
+<p><i class="bi bi-envelope-fill"></i> contacto@medecar.com</p>
+
+</div>
 
 </section>
 
 <!-- WHATSAPP -->
+
 <a href="https://wa.me/573017312645" class="whatsapp">
 <i class="bi bi-whatsapp"></i>
 </a>
 
+<!-- FOOTER -->
+
 <footer>
-<p>© 2026 Taller Mecánico Medecar</p>
+
+<p>
+© 2026 MEDECAR - Taller Mecánico Premium
+</p>
+
 </footer>
 
-</div>
+<!-- JS -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
